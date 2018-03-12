@@ -13,10 +13,7 @@ class Contcentration {
     var cards = [Card]()
     var score: Int
     var flipCount: Int
-    var emojiList: [String]
-    var emojiThemeName: String
-    var emojiThemeColor: String
-    
+
     var indexOfOneAndOnlyFaceUpCard: Int?
     
     func chooseCard(at index: Int) {
@@ -95,12 +92,6 @@ class Contcentration {
         
         score = 0
         flipCount = 0
-        
-        // Initialize the Theme
-        let theme = EmojiTheme()
-        emojiList = theme.emojis
-        emojiThemeName = theme.emojiThemeName
-        emojiThemeColor = theme.cardTheme
     }
 }
 

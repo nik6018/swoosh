@@ -14,7 +14,6 @@
 		CDC575EA205193D10021A57E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDC575E8205193D10021A57E /* LaunchScreen.storyboard */; };
 		CDC575F2205195750021A57E /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC575F1205195750021A57E /* Card.swift */; };
 		CDC575F42051A9640021A57E /* Concentration.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC575F32051A9640021A57E /* Concentration.swift */; };
-		CDC575F8205453140021A57E /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC575F7205453140021A57E /* Theme.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +26,6 @@
 		CDC575EB205193D10021A57E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CDC575F1205195750021A57E /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		CDC575F32051A9640021A57E /* Concentration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Concentration.swift; sourceTree = "<group>"; };
-		CDC575F7205453140021A57E /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +60,6 @@
 			children = (
 				CDC575DF205193D10021A57E /* AppDelegate.swift */,
 				CDC575E1205193D10021A57E /* ViewController.swift */,
-				CDC575F7205453140021A57E /* Theme.swift */,
 				CDC575E3205193D10021A57E /* Main.storyboard */,
 				CDC575F1205195750021A57E /* Card.swift */,
 				CDC575F32051A9640021A57E /* Concentration.swift */,
@@ -147,7 +144,6 @@
 			files = (
 				CDC575E2205193D10021A57E /* ViewController.swift in Sources */,
 				CDC575F42051A9640021A57E /* Concentration.swift in Sources */,
-				CDC575F8205453140021A57E /* Theme.swift in Sources */,
 				CDC575F2205195750021A57E /* Card.swift in Sources */,
 				CDC575E0205193D10021A57E /* AppDelegate.swift in Sources */,
 			);

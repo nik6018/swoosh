@@ -11,14 +11,14 @@ import UIKit
 class ViewController: UIViewController {
     
     lazy var gameEngine = Contcentration(numberOfPairOfCards: (cardButtons.count + 1) / 2)
+    var currentTheme: (emojis: [String], themeColor: UIColor)!
     
-    let colors = [
-        "red": UIColor.red,
-        "blue": UIColor.blue,
-        "green": UIColor.green,
-        "purple": UIColor.purple,
-        "yellow": UIColor.yellow,
-        "orange": UIColor.orange,
+    let emojiThemeCollection = [
+        "emojiSimleyChoices" : (["😨","🤩","😈","🤢","😇","😛","😍","😎","😚", "😛", "😄", "🤣", "😢", "😡", "🤮", "🤕"], UIColor.red),
+        "emojiPeopleChoices" : (["👶🏽","🧛🏽‍♂️","🎅🏽","🙆🏼‍♀️","👸🏽","💆🏽‍♂️","👮🏿‍♀️","🕵🏽‍♀️","👨‍🔧", "👩‍🚀", "👨🏽‍💻", "🧛‍♀️", "👩🏽‍⚖️", "🤷🏻‍♂️", "💇🏻‍♂️", "🧜🏻‍♂️"], UIColor.blue),
+        "emojiAnimalChoices" : (["🐶","🐹","🐰","🦁","🐷","🐥","🐍","🦋","🦊", "🐌", "🕷", "🦖", "🦀", "🐡", "🐫", "🐓"], UIColor.green),
+        "emojiFoodChoices"   : (["🍎","🍑","🍋","🥦","🍞","🍓","🍗","🍠","🥥", "🥗", "🥖", "🍬", "🍪", "🌰", "🍿", "🍩"], UIColor.orange),
+        "emojiSportChoices"  : (["⚽️","🏈","🥊","🏓","🏑","🏏","⛳️","🏂", "⚾️", "🎾", "🏀", "🏐", "🎱", "🎽", "⛸", "🎮"], UIColor.purple)
     ]
     
     override func viewDidLoad() {
@@ -57,7 +57,7 @@ class ViewController: UIViewController {
                 button.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
             }else {
                 button.setTitle("", for: .normal)
-                button.backgroundColor = card.isMatched ? #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0) : colors[gameEngine.emojiThemeColor]
+                button.backgroundColor = card.isMatched ? #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0) : currentTheme.themeColor
             }
         }
         
@@ -68,10 +68,14 @@ class ViewController: UIViewController {
     }
     
     func updateTheme() {
+        let randomIndex = Int(arc4random_uniform(UInt32(UInt(emojiThemeCollection.count))))
         self.view.backgroundColor = UIColor.black
         
+        currentTheme = Array(emojiThemeCollection.values)[randomIndex]
+        
+        //Set the color for all the cards
         for button in cardButtons  {
-            button.backgroundColor = colors[gameEngine.emojiThemeColor]!
+            button.backgroundColor = currentTheme.themeColor
         }
         
         flipCountLabel.textColor = UIColor.white
@@ -81,14 +85,14 @@ class ViewController: UIViewController {
     var emojiForCards = [Int:String]()
     
     func getEmoji(for card: Card) -> String {
-        var emojiChoices = gameEngine.emojiList
+        var emojiChoices = currentTheme.emojis
         
         if emojiForCards[card.identifier] == nil ,emojiChoices.count > 0 {
             let randomIndex = Int(arc4random_uniform(UInt32(emojiChoices.count)))
             let emoji = emojiChoices.remove(at: randomIndex)
             emojiForCards[card.identifier] = emoji
         }
-        return emojiForCards[card.identifier] ?? "FCK You"
+        return emojiForCards[card.identifier] ?? "?"
         
     }
 }
