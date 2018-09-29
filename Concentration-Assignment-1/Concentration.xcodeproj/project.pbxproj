@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD4517FD205E167C00F19396 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4517FC205E167C00F19396 /* LoginViewController.swift */; };
+		CDAD1A46209DF02700D03204 /* ConcentrationThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAD1A45209DF02700D03204 /* ConcentrationThemeViewController.swift */; };
 		CDC575E0205193D10021A57E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC575DF205193D10021A57E /* AppDelegate.swift */; };
-		CDC575E2205193D10021A57E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC575E1205193D10021A57E /* ViewController.swift */; };
+		CDC575E2205193D10021A57E /* ConcentrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC575E1205193D10021A57E /* ConcentrationViewController.swift */; };
 		CDC575E5205193D10021A57E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDC575E3205193D10021A57E /* Main.storyboard */; };
 		CDC575E7205193D10021A57E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDC575E6205193D10021A57E /* Assets.xcassets */; };
 		CDC575EA205193D10021A57E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDC575E8205193D10021A57E /* LaunchScreen.storyboard */; };
@@ -17,9 +19,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CD4517FC205E167C00F19396 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		CDAD1A45209DF02700D03204 /* ConcentrationThemeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcentrationThemeViewController.swift; sourceTree = "<group>"; };
 		CDC575DC205193D10021A57E /* Concentration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Concentration.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDC575DF205193D10021A57E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CDC575E1205193D10021A57E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CDC575E1205193D10021A57E /* ConcentrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcentrationViewController.swift; sourceTree = "<group>"; };
 		CDC575E4205193D10021A57E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CDC575E6205193D10021A57E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CDC575E9205193D10021A57E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -58,8 +62,10 @@
 		CDC575DE205193D10021A57E /* Concentration */ = {
 			isa = PBXGroup;
 			children = (
+				CDAD1A45209DF02700D03204 /* ConcentrationThemeViewController.swift */,
 				CDC575DF205193D10021A57E /* AppDelegate.swift */,
-				CDC575E1205193D10021A57E /* ViewController.swift */,
+				CD4517FC205E167C00F19396 /* LoginViewController.swift */,
+				CDC575E1205193D10021A57E /* ConcentrationViewController.swift */,
 				CDC575E3205193D10021A57E /* Main.storyboard */,
 				CDC575F1205195750021A57E /* Card.swift */,
 				CDC575F32051A9640021A57E /* Concentration.swift */,
@@ -97,7 +103,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Nikhil Muskur";
 				TargetAttributes = {
 					CDC575DB205193D10021A57E = {
@@ -142,9 +148,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CDC575E2205193D10021A57E /* ViewController.swift in Sources */,
+				CDAD1A46209DF02700D03204 /* ConcentrationThemeViewController.swift in Sources */,
+				CDC575E2205193D10021A57E /* ConcentrationViewController.swift in Sources */,
 				CDC575F42051A9640021A57E /* Concentration.swift in Sources */,
 				CDC575F2205195750021A57E /* Card.swift in Sources */,
+				CD4517FD205E167C00F19396 /* LoginViewController.swift in Sources */,
 				CDC575E0205193D10021A57E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -185,6 +193,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -192,6 +201,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -242,6 +252,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -249,6 +260,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -285,6 +297,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EAC87N5JJE;
 				INFOPLIST_FILE = Concentration/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.piroapp.Concentration;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -300,6 +313,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EAC87N5JJE;
 				INFOPLIST_FILE = Concentration/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.piroapp.Concentration;
 				PRODUCT_NAME = "$(TARGET_NAME)";

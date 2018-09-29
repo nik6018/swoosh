@@ -1,0 +1,10 @@
+TODO
+----
+
+# Create a custom Layout class instead of the default Flow Layout
+# Make the VC skinny instead of Fat
+# Implement NSOperation for Pre - Fetching to further improve performance
+# Try to implement the new UI in the design book
+# pass a struct of tuple for the completion block of the 3 n/w request
+
+

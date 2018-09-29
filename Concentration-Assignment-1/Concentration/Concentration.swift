@@ -9,67 +9,66 @@
 import Foundation
 import GameplayKit
 
-class Contcentration {
-    var cards = [Card]()
-    var score: Int
-    var flipCount: Int
-
-    var indexOfOneAndOnlyFaceUpCard: Int?
+struct Contcentration
+{
+    private(set) var cards = [Card]()
     
-    func chooseCard(at index: Int) {
-        if !cards[index].isMatched {
-            if let matchedIndex = indexOfOneAndOnlyFaceUpCard, matchedIndex != index {
-                if cards[matchedIndex].identifier == cards[index].identifier {
-                    cards[matchedIndex].isMatched = true
-                    cards[index].isMatched = true
-                    cards[matchedIndex].isMisMatched = 0
-                    cards[index].isMisMatched = 0
-                }
-                cards[index].isFaceup = true
-                indexOfOneAndOnlyFaceUpCard = nil
-            }else{
-                for cardIndex in cards.indices {
-                    cards[cardIndex].isFaceup = cardIndex == index
-                }
-                indexOfOneAndOnlyFaceUpCard = index
-            }
+    private var score = 0
+    private(set) var flipCount: Int
+
+    private var indexOfOneAndOnlyFaceUpCard: Int? {
+        get {
+            return cards.indices.filter { cards[$0].isFaceup }.oneAndOnly
+//            -------------------------
+//            let faceUpCardIndices = cards.indices.filter { cards[$0].isFaceup }
+//            return faceUpCardIndices.count == 1 ? faceUpCardIndices.first :  nil
+//          -------------------------
             
+//            var foundIndex: Int?
+//            for cardIndex in cards.indices {
+//                if cards[cardIndex].isFaceup {
+//                    if foundIndex == nil {
+//                        foundIndex = cardIndex
+//                    } else {
+//                        foundIndex = nil
+//                        return foundIndex
+//                    }
+//                }
+//            }
+//            return foundIndex
+        }
+        set {
+            for cardIndex in cards.indices {
+                cards[cardIndex].isFaceup = (newValue == cardIndex)
+            }
         }
     }
     
-    func flipCard(at index: Int) {
+    mutating func flipCard(at index: Int) {
         //Increase the FlipCount
         flipCount += 1
         
         if !cards[index].isMatched {
             if indexOfOneAndOnlyFaceUpCard == nil {
-                for cardIndex in cards.indices {
-                    cards[cardIndex].isFaceup = cardIndex == index
-                }
                 indexOfOneAndOnlyFaceUpCard = index
             }else{
                 if let previousIndex = indexOfOneAndOnlyFaceUpCard, previousIndex != index {
-                    if cards[previousIndex].identifier == cards[index].identifier {
+                    if cards[previousIndex] == cards[index] {
                         cards[previousIndex].isMatched = true
                         cards[index].isMatched = true
                         cards[previousIndex].isMisMatched = 0
                         cards[index].isMisMatched = 0
-                    }else {
+                    } else {
                         cards[previousIndex].isMisMatched += 1
                         cards[index].isMisMatched += 1
                     }
                     cards[index].isFaceup = true
-                    indexOfOneAndOnlyFaceUpCard = nil
                 }
             }
         }
     }
     
-    func getFlipCount() -> Int {
-        return flipCount
-    }
-    
-    func getScore() -> Int {
+    mutating func getScore() -> Int {
         for card in cards {
             if card.isMatched, card.isFaceup {
                 score += 1
@@ -78,7 +77,6 @@ class Contcentration {
                 score -= 1
             }
         }
-        
         return score
     }
     
@@ -92,6 +90,12 @@ class Contcentration {
         
         score = 0
         flipCount = 0
+    }
+}
+
+extension Collection {
+    var oneAndOnly: Element? {
+        return count == 1 ? first : nil
     }
 }
 
@@ -111,27 +115,6 @@ class Contcentration {
  case 2: card in case 1 is paired with a non matching card , here the isM val of card is increased by 1 .
  case 3: card in case 1 is again paired with a non mactching card, here again we increase by 1 bringing the total to 2
             and giving penalty.
- case 4: if both card match are matched then the value is reduced to 0 regardless of the previous values.
- 
- 
- 
- *?
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
+ case 4: if both card match are matched then the value of isM is reduced to 0 regardless of the previous values.
  */
 
